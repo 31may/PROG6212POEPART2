@@ -1,0 +1,28 @@
+﻿<Window x:Class="ContractMonthlyClaimSystem.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Admin Dashboard" Height="400" Width="600">
+    <Grid Margin="10">
+        <TextBlock FontSize="16" FontWeight="Bold" Text="Pending Claims" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0"/>
+
+        <ListView Name="claimListView" Margin="0,40,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Claim ID" Width="100" DisplayMemberBinding="{Binding ClaimID}"/>
+                    <GridViewColumn Header="Lecturer" Width="150" DisplayMemberBinding="{Binding LecturerName}"/>
+                    <GridViewColumn Header="Month" Width="100" DisplayMemberBinding="{Binding Month}"/>
+                    <GridViewColumn Header="Amount ($)" Width="100" DisplayMemberBinding="{Binding Amount}"/>
+                    <GridViewColumn Header="Actions" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Approve" Width="70" Margin="5" Click="ApproveClaim_Click"/>
+                                    <Button Content="Reject" Width="70" Margin="5" Click="RejectClaim_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+        </ListView>
+    </Grid>
+</Window>

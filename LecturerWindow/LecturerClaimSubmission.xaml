@@ -1,0 +1,28 @@
+﻿<Window x:Class="CMCS.LecturerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lecturer Claim Submission" Height="450" Width="600">
+    <Grid Margin="10">
+        <TextBlock FontSize="16" FontWeight="Bold" Text="Submit a New Claim" VerticalAlignment="Top"/>
+
+        <StackPanel VerticalAlignment="Top" Margin="0,40,0,0">
+            <TextBlock Text="Hours Worked" FontWeight="Bold"/>
+            <TextBox Name="hoursWorkedTextBox" Width="200" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Hourly Rate" FontWeight="Bold"/>
+            <TextBox Name="hourlyRateTextBox" Width="200" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Additional Notes" FontWeight="Bold"/>
+            <TextBox Name="notesTextBox" Width="400" Height="60" TextWrapping="Wrap" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Upload Supporting Documents" FontWeight="Bold"/>
+            <Button Content="Upload Document" Width="150" Click="UploadButton_Click" Margin="0,5,0,10"/>
+
+            <TextBlock Name="uploadedFileName" Text="No file uploaded" FontStyle="Italic"/>
+
+            <Button Content="Submit Claim" Width="150" Height="40" Click="SubmitClaim_Click"/>
+        </StackPanel>
+
+        <TextBlock Name="statusTextBlock" FontWeight="Bold" Foreground="Green" VerticalAlignment="Bottom"/>
+    </Grid>
+    </Window>
